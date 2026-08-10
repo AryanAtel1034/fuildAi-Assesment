@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="container">
+    <section class="hero">
+        <div>
+            <p class="eyebrow">Aryan Atel</p>
+            <h1>Task Manager</h1>
+            <p class="subtitle">A simple application running on Spring Boot + PostgreSQL.</p>
+        </div>
+        <div class="status" id="status">Checking API...</div>
+    </section>
+
+    <section class="card add-card">
+        <form id="task-form">
+            <input id="title" type="text" maxlength="200" placeholder="What do you need to do?" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <div class="list-header">
+            <h2>Tasks</h2>
+            <span id="count">0 tasks</span>
+        </div>
+        <div id="tasks" class="tasks">
+            <div class="empty">Loading tasks...</div>
+        </div>
+    </section>
+
+    <footer>
+        <span>Backend: Spring Boot</span>
+        <span>•</span>
+        <span>Database: PostgreSQL</span>
+        <span>•</span>
+        <span>Orchestration: Kubeadm</span>
+    </footer>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
