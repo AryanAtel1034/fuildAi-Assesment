@@ -1,3 +1,4 @@
+
 name: CI Pipeline
 
 on:
@@ -33,7 +34,7 @@ jobs:
 
       - name: Build and test application
         working-directory: application
-        run: mvn clean test package -DskipTests=false
+        run: mvn clean test package
 
 
   # ============================================================
@@ -58,7 +59,7 @@ jobs:
           file: ./application/Dockerfile
           push: false
           tags: |
-            ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
+            ${{ env.DOCKER_IMAGE }}:${{ github.run_number }}
             ${{ env.DOCKER_IMAGE }}:latest
 
 
@@ -70,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: docker-build
 
-    # Only push images from main
+    # Push only when changes reach main
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
@@ -93,6 +94,6 @@ jobs:
           file: ./application/Dockerfile
           push: true
           tags: |
-            ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
+            ${{ env.DOCKER_IMAGE }}:${{ github.run_number }}
             ${{ env.DOCKER_IMAGE }}:latest
 
