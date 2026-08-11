@@ -93,4 +93,3 @@ jobs:
           tags: |
             ${{ env.DOCKER_IMAGE }}:${{ github.run_number }}
             ${{ env.DOCKER_IMAGE }}:latest
-
