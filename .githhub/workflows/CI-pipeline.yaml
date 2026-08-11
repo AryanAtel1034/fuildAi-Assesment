@@ -61,7 +61,7 @@ jobs:
 
 
   # ============================================================
-  # Stage 3: Push Image to Docker Hub
+  # Stage 3: Push Image to  Docker Hub
   # ============================================================
   docker-push:
     name: Push Image to Docker Hub
