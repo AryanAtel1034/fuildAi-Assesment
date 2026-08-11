@@ -19,7 +19,7 @@ spec:
       project: task-manager
 
       source:
-        repoURL: https://github.com/YOUR_GITHUB_USERNAME/fuildAi-Assesment.git
+        repoURL: https://github.com/AryanAtel1034/fuildAi-Assesment.git
         targetRevision: main
         path: GitOps/env/{{environment}}
 
