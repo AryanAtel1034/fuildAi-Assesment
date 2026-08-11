@@ -23,7 +23,7 @@ spec:
       containers:
         - name: task-manager
 
-          image: YOUR_DOCKERHUB_USERNAME/task-manager:latest
+          image: aryanatel/task-manager:latest
 
           imagePullPolicy: Always
 
