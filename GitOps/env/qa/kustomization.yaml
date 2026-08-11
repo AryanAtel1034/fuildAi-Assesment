@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: task-manager-qa
+
+resources:
+  - ../../base
+
+images:
+  - name: aryanatel/task-manager
+    newName: aryanatel/task-manager
+    newTag: latest
