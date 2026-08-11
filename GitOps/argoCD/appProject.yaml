@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: task-manager
+  namespace: argocd
+
+spec:
+  description: Task Manager GitOps Project
+
+  sourceRepos:
+    - '*'
+
+  destinations:
+    - namespace: task-manager
+      server: https://kubernetes.default.svc
+
+    - namespace: task-manager-qa
+      server: https://kubernetes.default.svc
+
+    - namespace: task-manager-prod
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
