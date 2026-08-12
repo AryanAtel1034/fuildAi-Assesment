@@ -9,11 +9,11 @@ spec:
     - list:
         elements:
           - environment: dev
-            namespace: task-manager
+            namespace: task-manager-dev
 
   template:
     metadata:
-      name: 'task-manager-{{environment}}'
+      name: task-manager-{{environment}}
 
     spec:
       project: task-manager
