@@ -8,22 +8,16 @@ spec:
   description: Task Manager GitOps Project
 
   sourceRepos:
-    - '*'
+    - https://github.com/AryanAtel1034/fuildAi-Assesment.git
 
   destinations:
-    - namespace: task-manager
-      server: https://kubernetes.default.svc
-
-    - namespace: task-manager-qa
-      server: https://kubernetes.default.svc
-
-    - namespace: task-manager-prod
+    - namespace: task-manager-dev
       server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: ""
+      kind: Namespace
 
   namespaceResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: "*"
+      kind: "*"
